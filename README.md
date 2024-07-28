@@ -1,4 +1,4 @@
-# immigration data analysis
+# Movie Recommendation Engine
 <img src="img.png">
 
 ### Project summary
@@ -23,5 +23,5 @@ pip install - requirements.txt
 
 3. Run the Streamlit app
 ```bash
-streamlit run dashboard.py
+streamlit run movie_recomm.py
 ```
