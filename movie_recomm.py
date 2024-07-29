@@ -78,7 +78,9 @@ with st.spinner("Loading Data..."):
     rate = df[df['Genre'] == sel_genre]['IMDB_Rating'].unique().tolist()
     votes = df[df['Genre'] == sel_genre]['No_of_Votes'].unique().tolist()
     c1.table(series)
-    c2.image(posters)
+    fig = px.histogram(df, x=series, y=votes)
+    c2.plotly_chart(fig, use_container_width=True)
+
 
     st.header('Select the Movie 📼')
     sel_movie = st.selectbox('Choose the movie',series)
