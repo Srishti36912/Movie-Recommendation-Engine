@@ -75,10 +75,10 @@ with st.spinner("Loading Data..."):
     c2.metric('Total movies: ', len(total))
     posters = df[df['Genre'] == sel_genre]['Poster_Link'].unique().tolist()
     series = df[df['Genre'] == sel_genre]['Series_Title'].unique().tolist()
-    rate = df[df['Genre'] == sel_genre]['IMDB_Rating'].unique().tolist()
+    rate = df[df['Genre'] == sel_genre]['IMDB_Rating'].tolist()
     votes = df[df['Genre'] == sel_genre]['No_of_Votes'].unique().tolist()
     c1.table(series)
-    fig = px.histogram(df, x=series, y=votes)
+    fig = px.line(df, x=series, y=rate)
     c2.plotly_chart(fig, use_container_width=True)
 
 
