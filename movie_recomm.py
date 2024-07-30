@@ -9,7 +9,6 @@ import plotly.express as px
 def load_data():
     df = pd.read_csv('imdb_top_1000.csv')
     df = df.dropna()
-    print(df.shape)
     df = df.sort_values('IMDB_Rating', ascending=False)
 
     def clean_gross_value(value):
